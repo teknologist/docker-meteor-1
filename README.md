@@ -1,3 +1,6 @@
+### Forked in order to add graphicsmagick to the image
+
+
 ## Features:
 
  * Meteor 1.x package/bundle support
