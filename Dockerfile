@@ -18,7 +18,7 @@ RUN apt-get update
 
 # Install git, curl, python, and phantomjs
 #RUN apt-get install -y git curl python phantomjs
-RUN apt-get install -y git curl python
+RUN apt-get install -y git curl python graphicsmagick
 
 # Install latest Node from nodesource
 RUN curl https://deb.nodesource.com/setup | sh
