@@ -4,6 +4,8 @@ FROM debian:jessie
 
 RUN apt-get update
 
+RUN apt-get dist-upgrade
+
 ### For latest Node
 #RUN apt-get install -y software-properties-common
 #RUN add-apt-repository -y ppa:chris-lea/node.js
@@ -23,6 +25,9 @@ RUN apt-get install -y git curl python graphicsmagick
 # Install latest Node from nodesource
 RUN curl https://deb.nodesource.com/setup | sh
 RUN apt-get install -y nodejs
+
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Make sure we have a directory for the application
 RUN mkdir -p /var/www
