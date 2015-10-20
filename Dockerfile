@@ -4,7 +4,7 @@ FROM debian:jessie
 
 RUN apt-get update
 
-RUN apt-get dist-upgrade
+RUN apt-get  -y dist-upgrade
 
 ### For latest Node
 #RUN apt-get install -y software-properties-common
