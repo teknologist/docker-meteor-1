@@ -82,7 +82,6 @@ if [ -n "${BUNDLE_URL}" ]; then
    echo "Getting Meteor bundle..."
    curl -o /tmp/bundle.tgz ${BUNDLE_URL}
    tar xf /tmp/bundle.tgz -C ${APP_DIR}
-   curl -o /tmp/settings.json ${SETTINGS_URL}
 fi
 
 # See if the actual bundle is in the bundle
@@ -101,10 +100,7 @@ else
    echo "Unable to locate server directory; hold on: we're likely to fail"
 fi
 
-export METEOR_SETTINGS="$(cat tmp/settings.json)
 # Run meteor
 cd ${APP_DIR}
-echo "Environment vars:"
-env
 echo "Starting Meteor..."
 exec node ./main.js
